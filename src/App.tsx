@@ -1,24 +1,47 @@
+
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header';
+import VideoList from './components/VideoList';
+import SideBar from './components/SideBar';
 
 function App() {
+  const videos = [
+    {
+      title: 'Video 1',
+      thumbnailUrl: 'URL_TO_THUMBNAIL_1',
+      channelName: 'Channel 1',
+    },
+    {
+      title: 'Video 2',
+      thumbnailUrl: 'URL_TO_THUMBNAIL_2',
+      channelName: 'Channel 2',
+    },
+    // Add more video data as needed
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Header />
+      <div className="app__content">
+        <div className="app__sidebar">
+          <SideBar />
+        </div>
+
+        <div className="app__main">
+          {/* Video player */}
+          <div className="videoPlayer">
+            {/* Add your video player component here */}
+            <video controls width="100%">
+              <source src="YOUR_VIDEO_URL" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+
+          {/* Video list */}
+          <VideoList videos={videos} />
+        </div>
+      </div>
     </div>
   );
 }
