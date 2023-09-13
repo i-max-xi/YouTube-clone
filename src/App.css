@@ -22,11 +22,18 @@
 }
 
 .sidebar-icons {
-  margin-bottom: 1.5rem;
+  border-radius: 5rem;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
 }
 
 .sidebar-icons > span {
-  margin-left: 0.3rem;
+  margin-left: 1rem;
+}
+
+.active {
+  background-color: var(--slightly-black-color);
 }
 
 .app__main {
@@ -49,10 +56,15 @@
   width: 15%;
 }
 
+.hamburger-icon{
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
 .header__logo {
   width: 40%;
   background-color: var(--white-color);
-  margin-left: 1rem;
+  margin-left: 2rem;
 }
 
 .header__search {
@@ -84,6 +96,10 @@
   border-radius: 0 1rem 1rem 0;
 }
 
+.microphone-icon {
+  margin-left: 1rem;
+}
+
 .header__infos {
   display: flex;
   align-items: center;
@@ -95,7 +111,6 @@
   cursor: pointer;
   font-size: 1.2rem;
 }
-
 
 .notification-count {
   background-color: red;
@@ -116,7 +131,7 @@
 }
 
 .filter-chip {
-  padding: 5px 12px;
+  padding: 5px 14px;
   background-color: var(--slightly-black-color);
   border-radius: 20px;
   cursor: pointer;

@@ -8,12 +8,19 @@ function App() {
 
   const filters = [
     { name: "All", active: true },
+    { name: "Live", active: false },
     { name: "React", active: false },
     { name: "Angular", active: false },
     { name: "Vue", active: false },
+    { name: "Node", active: false },
+    { name: "Express", active: false },
+    { name: "MongoDB", active: false },
+    { name: "Comedy", active: false },
+    { name: "Recently uploaded", active: false },
+    { name: "New to you", active: false },
   ];
 
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);

@@ -1,4 +1,4 @@
-import FilterChip from './Chip'; // Import FilterChip
+import FilterChip from './Chip';
 
 type FilterChipsProps = {
   filters: {

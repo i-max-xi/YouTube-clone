@@ -6,25 +6,25 @@ import {
   faSearch,
   faBars,
   faVideo,
+  faMicrophone
 } from "@fortawesome/free-solid-svg-icons";
 
 type HeaderProps = {
   toggleSidebar: () => void;
-  notificationCount: number; // Add a notification count prop
+  notificationCount: number;
 };
 
 function Header(props: HeaderProps) {
   return (
     <div className="header">
       <div className="header__left">
-        <button className="hamburger-icon" onClick={props.toggleSidebar}>
-          <FontAwesomeIcon icon={faBars} />
-        </button>
+          <FontAwesomeIcon icon={faBars} onClick={props.toggleSidebar} className="hamburger-icon"/>
         <img alt="Youtube logo" src={ytLogo} className="header__logo" />
       </div>
       <div className="header__search">
         <input type="text" placeholder="Search" />
         <FontAwesomeIcon className="search-icon" icon={faSearch} />
+        <FontAwesomeIcon className="microphone-icon" icon={faMicrophone} />
       </div>
       <div className="header__infos">
         <span>
