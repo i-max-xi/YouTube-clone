@@ -1,11 +1,11 @@
 import ytLogo from "../assets/YTlogo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faUpload,
   faBell,
   faUser,
   faSearch,
   faBars,
+  faVideo,
 } from "@fortawesome/free-solid-svg-icons";
 
 type HeaderProps = {
@@ -28,10 +28,10 @@ function Header(props: HeaderProps) {
       </div>
       <div className="header__infos">
         <span>
-          <FontAwesomeIcon icon={faUpload} />
+          <FontAwesomeIcon icon={faVideo} title="Create"/>
         </span>
         <span>
-          <FontAwesomeIcon icon={faBell} className="notification-icon"/>
+          <FontAwesomeIcon icon={faBell} className="notification-icon" title="Notifications"/>
           {props.notificationCount > 0 && (
             <span className="notification-count">{props.notificationCount}</span>
           )}
