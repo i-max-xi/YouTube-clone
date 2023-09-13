@@ -6,7 +6,7 @@ type FilterChipProps = {
     }
 }
 
-const FilterChip = ({ filter }: FilterChipProps) => {
+const Chip = ({ filter }: FilterChipProps) => {
   return (
     <div className={`filter-chip ${filter.active ? 'active' : ''}`}>
       {filter.name}
@@ -14,4 +14,4 @@ const FilterChip = ({ filter }: FilterChipProps) => {
   );
 };
 
-export default FilterChip;
+export default Chip;

@@ -34,12 +34,12 @@ function App() {
 
         <div className="app__main">
           <FilterChips filters={filters} />
-          <div className="videoPlayer">
+          {/* <div className="videoPlayer">
             <video controls width="100%">
               <source src="YOUR_VIDEO_URL" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
-          </div>
+          </div> */}
 
         </div>
       </div>
