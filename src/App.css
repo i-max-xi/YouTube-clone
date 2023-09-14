@@ -16,7 +16,6 @@
 }
 
 .app__sidebar {
-  width: 15%;
   color: var(--white-color);
   padding: 1rem;
   background-color: var(--black-color);

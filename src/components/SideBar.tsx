@@ -10,7 +10,7 @@ import {
   faScissors,
   faArchive,
   faUsers,
-  faCreditCard
+  faCreditCard,
 } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 
@@ -35,7 +35,7 @@ const SideBar = ({ isSidebarOpen }: SideBarProps) => {
     { id: "subscription-1", icon: faUsers, label: "Tech Tips" },
     { id: "subscription-2", icon: faUser, label: "Danny Jones" },
     { id: "subscription-3", icon: faUser, label: "CS50" },
-    ];
+  ];
 
   const [activeItem, setActiveItem] = useState("home");
 
@@ -48,11 +48,9 @@ const SideBar = ({ isSidebarOpen }: SideBarProps) => {
       {sidebarItems.map((item) => (
         <div
           key={item.id}
-          className={`sidebar-item ${
-            activeItem === item.id ? "active" : ""
-          } ${item.isDivider ? "divider" : ""} ${
-            item.isShowMore ? "show-more" : ""
-          }`}
+          className={`sidebar-item ${activeItem === item.id ? "active" : ""} ${
+            item.isDivider ? "divider" : ""
+          } ${item.isShowMore ? "show-more" : ""}`}
           onClick={() => handleItemClick(item.id)}
         >
           {item.icon && <FontAwesomeIcon icon={item.icon} />}

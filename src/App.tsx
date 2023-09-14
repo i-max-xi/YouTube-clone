@@ -20,7 +20,7 @@ function App() {
     { name: "New to you", active: false },
   ];
 
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -30,7 +30,7 @@ function App() {
     <div className="app">
       <Header toggleSidebar={toggleSidebar} notificationCount={5}/>
       <div className="app__content">
-          { isSidebarOpen && <SideBar isSidebarOpen={isSidebarOpen}/>}
+      <SideBar isSidebarOpen={isSidebarOpen} />
 
         <div className="app__main">
           <FilterChips filters={filters} />
