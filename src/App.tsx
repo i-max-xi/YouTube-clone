@@ -30,7 +30,7 @@ function App() {
     <div className="app">
       <Header toggleSidebar={toggleSidebar} notificationCount={5}/>
       <div className="app__content">
-      <SideBar isSidebarOpen={isSidebarOpen} />
+      <SideBar isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen}/>
 
         <div className="app__main">
           <FilterChips filters={filters} />

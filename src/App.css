@@ -15,24 +15,11 @@
   display: flex;
 }
 
+/* sidebar */
 .app__sidebar {
   color: var(--white-color);
   padding: 1rem;
   background-color: var(--black-color);
-}
-
-.sidebar-icons {
-  border-radius: 5rem;
-  padding: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-.sidebar-icons > span {
-  margin-left: 1rem;
-}
-
-.active {
-  background-color: var(--slightly-black-color);
 }
 
 .sidebar-item {
@@ -69,7 +56,7 @@
   cursor: pointer;
 }
 
-
+/* Main body starts here */
 .app__main {
   flex-grow: 1;
   color: var(--white-color);
@@ -132,6 +119,16 @@
 
 .microphone-icon {
   margin-left: 1rem;
+  cursor: pointer;
+  padding: 12px 15px;
+  border-radius: 5rem;
+  transition: background-color 0.3s ease;
+
+}
+
+.microphone-icon:hover {
+  background-color: var(--white-color);
+  color: var(--slightly-black-color);
 }
 
 .header__infos {
@@ -157,6 +154,7 @@
   left: -0.3rem;
 }
 
+/* filter chip */
 .filter-chips {
   display: flex;
   gap: 10px;

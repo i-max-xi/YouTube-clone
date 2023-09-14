@@ -16,9 +16,10 @@ import { useState } from "react";
 
 type SideBarProps = {
   isSidebarOpen: boolean;
+  setIsSidebarOpen: (isopen: boolean) => void;
 };
 
-const SideBar = ({ isSidebarOpen }: SideBarProps) => {
+const SideBar = ({ isSidebarOpen, setIsSidebarOpen }: SideBarProps) => {
   const sidebarItems = [
     { id: "home", icon: faHome, label: "Home" },
     { id: "shorts", icon: faFire, label: "Shorts" },
@@ -41,6 +42,7 @@ const SideBar = ({ isSidebarOpen }: SideBarProps) => {
 
   const handleItemClick = (itemName: string) => {
     setActiveItem(itemName);
+    setIsSidebarOpen(true);
   };
 
   return (
