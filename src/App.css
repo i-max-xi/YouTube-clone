@@ -20,6 +20,8 @@
   color: var(--white-color);
   padding: 1rem;
   background-color: var(--black-color);
+  height: 90vh;
+  overflow-y: scroll;
 }
 
 .sidebar-item {
@@ -38,6 +40,10 @@
 
 .sidebar-item.active {
   background-color: var(--slightly-black-color);
+}
+
+.open-padding {
+  padding: 0.5rem 4rem 0.5rem 0.5rem;
 }
 
 .divider {

@@ -20,7 +20,7 @@ type SideBarProps = {
 };
 
 const SideBar = ({ isSidebarOpen, setIsSidebarOpen }: SideBarProps) => {
-  const sidebarItems = [
+  const allSidebarItems = [
     { id: "home", icon: faHome, label: "Home" },
     { id: "shorts", icon: faFire, label: "Shorts" },
     { id: "subscriptions", icon: faCreditCard, label: "Subscriptions" },
@@ -36,6 +36,18 @@ const SideBar = ({ isSidebarOpen, setIsSidebarOpen }: SideBarProps) => {
     { id: "subscription-1", icon: faUsers, label: "Tech Tips" },
     { id: "subscription-2", icon: faUser, label: "Danny Jones" },
     { id: "subscription-3", icon: faUser, label: "CS50" },
+    { id: "subscription-4", icon: faUser, label: "John Doe" },
+    { id: "subscription-5", icon: faUser, label: "Jane Smith" },
+  ];
+
+  const closedSidebarItems = [
+    { id: "home", icon: faHome },
+    { id: "shorts", icon: faFire, label: "Shorts" },
+    { id: "subscriptions", icon: faCreditCard },
+    { id: "library", icon: faNewspaper },
+    { id: "subscriptions-heading", label: "Subscriptions" },
+    { id: "divider1", isDivider: true },
+    { id: "show-more", isShowMore: true, label: "Show more" },
   ];
 
   const [activeItem, setActiveItem] = useState("home");
@@ -45,17 +57,26 @@ const SideBar = ({ isSidebarOpen, setIsSidebarOpen }: SideBarProps) => {
     setIsSidebarOpen(true);
   };
 
+  const displayedItems = isSidebarOpen ? allSidebarItems : closedSidebarItems;
+
   return (
     <div className="app__sidebar">
-      {sidebarItems.map((item) => (
+      {displayedItems.map((item) => (
         <div
           key={item.id}
           className={`sidebar-item ${activeItem === item.id ? "active" : ""} ${
             item.isDivider ? "divider" : ""
-          } ${item.isShowMore ? "show-more" : ""}`}
+          } ${item.isShowMore ? "show-more" : ""} ${
+            isSidebarOpen ? "open-padding" : ""
+          }`}
           onClick={() => handleItemClick(item.id)}
         >
-          {item.icon && <FontAwesomeIcon icon={item.icon} />}
+          {item.icon && (
+            <FontAwesomeIcon
+              icon={item.icon}
+              title={isSidebarOpen ? "" : item.label}
+            />
+          )}
           {isSidebarOpen && <span>{item.label}</span>}
           {item.isShowMore && (
             <div className="show-more-icon">
