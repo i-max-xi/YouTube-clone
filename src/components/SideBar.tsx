@@ -41,13 +41,12 @@ const SideBar = ({ isSidebarOpen, setIsSidebarOpen }: SideBarProps) => {
   ];
 
   const closedSidebarItems = [
-    { id: "home", icon: faHome },
+    { id: "home", icon: faHome, label: "Home" },
     { id: "shorts", icon: faFire, label: "Shorts" },
-    { id: "subscriptions", icon: faCreditCard },
-    { id: "library", icon: faNewspaper },
-    { id: "subscriptions-heading", label: "Subscriptions" },
-    { id: "divider1", isDivider: true },
-    { id: "show-more", isShowMore: true, label: "Show more" },
+    { id: "subscriptions", icon: faCreditCard, label: "Subscriptions" },
+    { id: "library", icon: faNewspaper, label: "Library" },
+    { id: "divider1", isDivider: false },
+    { id: "show-more", isShowMore: false },
   ];
 
   const [activeItem, setActiveItem] = useState("home");
@@ -64,10 +63,10 @@ const SideBar = ({ isSidebarOpen, setIsSidebarOpen }: SideBarProps) => {
       {displayedItems.map((item) => (
         <div
           key={item.id}
-          className={`sidebar-item ${activeItem === item.id ? "active" : ""} ${
+          className={`sidebar-item ${activeItem === item.id && isSidebarOpen ? "active" : ""} ${
             item.isDivider ? "divider" : ""
           } ${item.isShowMore ? "show-more" : ""} ${
-            isSidebarOpen ? "open-padding" : ""
+            isSidebarOpen ? "open-padding" : "sidebar-closed"
           }`}
           onClick={() => handleItemClick(item.id)}
         >
@@ -75,9 +74,13 @@ const SideBar = ({ isSidebarOpen, setIsSidebarOpen }: SideBarProps) => {
             <FontAwesomeIcon
               icon={item.icon}
               title={isSidebarOpen ? "" : item.label}
+              className={activeItem === item.id ? "icon-active" : "sidebar-icon"}
             />
           )}
           {isSidebarOpen && <span>{item.label}</span>}
+          {!isSidebarOpen && (
+            <span className="closed-label">{item.label}</span>
+          )}
           {item.isShowMore && (
             <div className="show-more-icon">
               <FontAwesomeIcon icon={faChevronDown} />
