@@ -1,17 +1,26 @@
 
 type FilterChipProps = {
-    filter: {
-        name: string,
-        active: boolean
-    }
+    chip: string,
+    activeFilter: string,
+    onChipClick: (name: string) => void
 }
 
-const Chip = ({ filter }: FilterChipProps) => {
-  return (
-    <div className={`filter-chip ${filter.active ? 'active' : ''}`}>
-      {filter.name}
-    </div>
-  );
-};
+
+  const Chip = ({ chip, onChipClick, activeFilter }: FilterChipProps) => {
+  
+    return (
+      <div
+        className={`filter-chip ${activeFilter === chip ? "active" : ""}`}
+        onClick={() => onChipClick(chip)}
+      >
+        {chip}
+      </div>
+    );
+  };
+
+
+  
+
+  
 
 export default Chip;

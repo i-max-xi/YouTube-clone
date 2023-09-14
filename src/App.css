@@ -127,8 +127,7 @@
 }
 
 .microphone-icon:hover {
-  background-color: var(--white-color);
-  color: var(--slightly-black-color);
+  background-color: var(--slightly-black-color);
 }
 
 .header__infos {
