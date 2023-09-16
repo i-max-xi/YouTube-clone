@@ -34,9 +34,14 @@
   color: var(--white-color);
 }
 
+.sidebar-item:hover {
+  background-color: var(--slightly-black-color);
+}
+
 .sidebar-closed {
   flex-direction: column;
-  padding: 0;
+  padding: 0.5rem 0;
+  border-radius: 0;
 }
 
 .sidebar-item > span {
@@ -113,6 +118,11 @@
 .hamburger-icon{
   font-size: 1.5rem;
   cursor: pointer;
+  color: var(--slightly-white-color);
+}
+
+.hamburger-icon:hover {
+  background-color: var(--slightly-black-color);
 }
 
 .header__logo {
