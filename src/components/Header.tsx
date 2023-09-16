@@ -1,4 +1,4 @@
-import ytLogo from "../assets/YTlogo.png";
+import ytLogo from "../assets/youtube_logo.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBell,
