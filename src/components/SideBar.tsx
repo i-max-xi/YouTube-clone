@@ -30,7 +30,7 @@ const SideBar = ({ isSidebarOpen, setIsSidebarOpen }: SideBarProps) => {
     { id: "your-videos", icon: faArchive, label: "Your Videos" },
     { id: "watch-later", icon: faClock, label: "Watch Later" },
     { id: "your-clips", icon: faScissors, label: "Your Clips" },
-    { id: "show-more", isShowMore: true, label: "Show more" },
+    { id: "show-more", icon: faChevronDown, isShowMore: true, label: "Show more" },
     { id: "divider2", isDivider: true },
     { id: "subscriptions-heading", label: "Subscriptions" },
     { id: "subscription-1", icon: faUsers, label: "Tech Tips" },
@@ -80,11 +80,6 @@ const SideBar = ({ isSidebarOpen, setIsSidebarOpen }: SideBarProps) => {
           {isSidebarOpen && <span>{item.label}</span>}
           {!isSidebarOpen && (
             <span className="closed-label">{item.label}</span>
-          )}
-          {item.isShowMore && (
-            <div className="show-more-icon">
-              <FontAwesomeIcon icon={faChevronDown} />
-            </div>
           )}
         </div>
       ))}
