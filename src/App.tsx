@@ -4,6 +4,9 @@ import Header from "./components/Header";
 import SideBar from "./components/SideBar";
 import FilterChips from "./FilterChips";
 import { Paginator } from 'primereact/paginator';
+import "primereact/resources/themes/saga-blue/theme.css";
+import "primereact/resources/primereact.min.css";
+import "primeicons/primeicons.css";
 
 function App() {
   const filters = [
@@ -34,9 +37,9 @@ function App() {
   }
 
   const [first, setFirst] = useState(0);
-  const [rows, ] = useState(10);
-  const [totalRecords, setTotalRecords] = useState(0); // Total number of universities
+  const [totalRecords, setTotalRecords] = useState(0);
   const [ghanaianUniversities, setGhanaianUniversities] = useState<Universities[]>([]);
+
 
   useEffect(() => {
     const fetchGhanaianUniversities = async () => {
@@ -49,7 +52,8 @@ function App() {
         }
         const data = await response.json();
         setGhanaianUniversities(data);
-        setTotalRecords(data.length); // Set the total number of universities
+        setTotalRecords(data.length);
+
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -58,7 +62,7 @@ function App() {
     fetchGhanaianUniversities();
   }, []);
 
-  const onPageChange = (event: { first: number; }) => {
+  const onPageChange = (event: { first: React.SetStateAction<number>; rows: React.SetStateAction<number>; }) => {
     setFirst(event.first);
   };
 
@@ -80,14 +84,14 @@ function App() {
           <div className="uni-list">
             <h2>Ghanaian Universities</h2>
             <ul>
-              {ghanaianUniversities.slice(first, first + rows).map((university) => (
-                <li key={university.name}>{university.name}</li>
+              {ghanaianUniversities.slice(first, first + 6).map((university) => (
+                <li className="list-item"  key={university.name}>{university.name}</li>
               ))}
             </ul>
           </div>
           <Paginator
             first={first}
-            rows={1} // Display only one record per page
+            rows={6}
             totalRecords={totalRecords}
             onPageChange={onPageChange}
             template="FirstPageLink PrevPageLink CurrentPageReport NextPageLink LastPageLink"
