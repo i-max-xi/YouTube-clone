@@ -221,4 +221,28 @@
   color: var(--black-color);
 }
 
+.uni-list {
+  height: 70vh;
+  overflow-y: scroll;
+}
+.uni-list h2 {
+  transform: translateX(1rem);
+}
+
+.list-item {
+  list-style-type: none;
+  background-color: var(--slightly-black-color);
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 2rem;
+}
+
+.p-paginator {
+  background: none;
+}
+
+.p-paginator-first, .p-paginator-prev, .p-paginator-next, .p-paginator-last {
+  border-radius: 5rem !important;
+}
+
 
