@@ -238,7 +238,7 @@
 }
 
 .p-paginator {
-  background: none;
+  background: none !important;
 }
 
 .p-paginator-first, .p-paginator-prev, .p-paginator-next, .p-paginator-last {
